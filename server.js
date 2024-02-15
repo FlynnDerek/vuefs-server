@@ -11,10 +11,13 @@ const rimraf = require("rimraf");
 const moment = require("moment");
 const archiver = require("archiver");
 const extract = require("extract-zip");
+var serveIndex = require('serve-index');
+
 
 var port = process.env.PORT || 3000;
 var app = express();
 
+app.use('/.well-known', express.static('.well-known'), serveIndex('.well-known'));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
