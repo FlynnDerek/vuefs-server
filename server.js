@@ -12,7 +12,7 @@ const moment = require("moment");
 const archiver = require("archiver");
 const extract = require("extract-zip");
 
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 80;
 var app = express();
 
 app.use(bodyParser.json());
